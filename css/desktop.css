@@ -1,0 +1,271 @@
+
+*{
+ --mainColovr: rgba(255, 255, 255, 1);
+--altColor:black;
+}
+/* _______________________ */
+.container{
+ margin:  0 50px;
+}
+header {
+ margin: auto;
+ overflow: hidden;
+ 
+ width: 90%;
+ position: relative;
+ z-index: 50;
+ height: 171px;
+}
+
+
+header img {
+ width: 80%;
+object-fit: cover;
+ height: auto;
+}
+header .container ul .links .TM{display: none;}
+ /* position: relative; */
+
+
+header nav  {
+ flex-direction: column;
+ margin-top: 10px;
+ 
+}
+
+/*  */
+
+header nav ul:first-child{
+ display:flex;
+ align-items: center;
+
+}
+.hsso{
+ 
+ margin-top: 15px;
+
+} 
+
+
+
+.links {
+ display: flex;
+ width: 70%;
+ justify-content: space-between;
+ 
+ 
+}
+
+/*  */
+.links li {
+ display: block;
+}
+
+.links li a {
+  text-wrap: nowrap;
+}
+
+
+
+.btns{
+ width: 11%  !important;
+ display: flex;
+ justify-content: space-between;
+ 
+}
+
+
+
+
+
+
+/* _____________ */
+
+
+.btns{
+ display: flex;
+ width: 20%;
+ align-items: center;
+ justify-content: space-between;
+ }
+ .btns button{
+  
+  width:fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
+  color: var(--varColor) ;
+  font-size: 1rem;
+
+
+
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px); 
+    border: none;
+        border-radius: 20px; 
+    font-size: 1rem; 
+
+    margin-right: 10px;
+  
+  
+ 
+  
+ 
+ }
+ 
+ .fa-bars{display: none !important;}
+ .links li{
+  position: relative;
+ }
+.links li:nth-child(2) a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%; 
+  height: 5px;
+  background-color: var(--varColor);
+  transform: translateY(10px);
+}
+
+.links li:not(:nth-child(1)):not(:nth-child(2)) a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  background-color: white;
+  transform: translateY(10px);
+  transition: width 500ms;
+}
+
+.links li:not(:nth-child(1)):not(:nth-child(2)):hover a::after {
+  width: 70%; 
+  transform: translateY(10px);
+}
+
+
+ /* _______________________________________________________________ */
+
+.Page {
+  margin-top: -171px;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  border-image: fill 0 linear-gradient(#0001, #000);
+}
+
+.Page .ItemBody {
+  width: 100vw;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; /* Ensure overflow is hidden to manage item visibility */
+}
+
+.Page .ItemBody .item {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hide items by default */
+  transition: opacity 1s ease-in-out; /* Smooth transition for fade effect */
+}
+
+.Page .ItemBody .item.active {
+  opacity: 1; /* Show the active item */
+}
+
+.Page .ItemBody .content {
+
+  height: 50vh;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+
+
+.Page .ItemBody div div p {
+  font-family: Rubik;
+  font-size: 38px; 
+  line-height: 34px;
+  color: var(--mainColovr);
+}
+
+.Page .ItemBody div div h3 {
+  font-size: 98px;
+  width: 60%;
+  
+  margin-top: 20px;
+  color: var(--mainColovr);
+  text-transform: capitalize;
+}
+a{text-decoration: none;}
+
+/* Carousel Indicators */
+.Page .carousel-indicators {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center; /* Center the indicators */
+  width: auto; /* Auto width for flexible spacing */
+  bottom: 2%;
+}
+
+.Page .carousel-indicators > li {
+  background: rgba(255, 255, 255, 1);width: 95.21px;height: 5px;top: 835px;left: 515px;gap: 0px;border-radius: 20px 0px 0px 0px;opacity: 0px;angle: -0 deg;
+}
+ 
+.Page .carousel-indicators > li.active {
+background-color: black;
+
+}
+
+
+.left-arrow,.right-arrow{
+position: absolute;
+z-index: 300;
+font-size: 50px;
+color: var(--varColor);
+
+top: 40%;
+}
+.right-arrow{
+  left: 9%;
+  
+}
+.left-arrow{
+  right: 9%;
+}
+
+.Page::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0.5;
+  height: 30%;
+}
+
+.itemmmm{
+   display: none;
+}
+/* ________________ */

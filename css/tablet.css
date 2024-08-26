@@ -1,0 +1,22 @@
+
+.left-arrow,.right-arrow{
+ display: none ;
+}
+
+.btns{
+ display: none;
+ 
+ }
+   
+ .links li {
+  display: none;
+ }
+ .links li:first-child,
+.links li:last-child {
+ display: block;
+}
+
+.itemmmm .icons li,
+.itemmmm .navs li {
+ display: block;
+}

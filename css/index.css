@@ -1,0 +1,352 @@
+*{
+ box-sizing: border-box;
+ padding: 0;
+ margin: 0;
+}
+
+:root{
+ --varColor: rgba(255, 255, 255, 1);
+ --altColor:black;
+}
+
+body {
+ font-family: 'Rubik', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+ font-weight: 700; 
+
+}
+p {
+font-weight: 400;
+
+}
+
+
+li a
+{text-decoration: none;
+text-transform: capitalize;
+
+}
+ul {
+ list-style-type: none;
+}
+
+
+/* */
+header {
+ width: 100%;
+ height: 70px;
+
+}
+
+
+header img {
+ width: 50px;
+ position: relative;
+ height: 50px;
+ z-index: 50;
+}
+
+
+
+
+header nav {
+ display: flex;
+ flex-direction: column;
+ width: 100%  ;
+ height: 20vh ;
+
+}
+header nav ul{
+ display: flex;
+ justify-content: space-between;
+}
+/*  */
+header nav ul:first-child{
+ display: none;
+}
+
+.btns{
+display: none;
+
+}
+  
+
+
+.links {
+ display: flex;
+ position: relative;
+ z-index: 500;
+ height: 50px;
+ padding:10px;
+ 
+ height: 100px;
+ width: 100%;
+ justify-content: space-between;
+ align-items: center;
+}
+/*  */
+.TM img{
+  width:  50% !important;
+  height: 50% !important;
+}
+.links li {
+ display: none;
+ margin-top: 10px;
+}
+
+.links li:first-child,
+.links li:last-child {
+ display: flex;
+}
+
+.itemmmm .icons li,
+.itemmmm .navs li {
+ display: flex;
+}
+
+
+.links li:not(li:first-child) {
+padding-right: 30px;
+}
+
+.links li a{
+  font-size: 16px;
+  color: var(--varColor);
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+  }
+ 
+/* ______________________________________________________-- */
+.itemmmm{
+ position: absolute;
+ right: 0;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column;
+z-index: 500000;
+ top: 0;
+ display: none;
+ width: 80%;
+ background-color: var(--varColor);
+ height: 100vh;
+}
+.itemmmm li img{
+ width: 70%;
+ color: green;
+}
+
+.innerItemmm {
+ width: 90%;
+ height: 80%;
+ padding: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+}
+.icons{
+ display: flex ;
+align-items: center;
+margin: auto;
+justify-content: space-between;
+ width: 90%;
+}
+.icons a{
+  display: block;
+  position: relative;
+}
+
+
+
+.isoo{
+display: flex ;
+padding: 10px;
+justify-content: space-between;
+align-items: center;
+}
+.isoo img{
+  width: 100%;
+  height: 100%;
+}
+.isoo li {
+  color: red;
+}
+.close{border: none;background-color: transparent;color: black;
+font-size: 20px;
+cursor: pointer;
+}
+.fa-bars{
+  cursor: pointer;
+}
+
+.icons a {
+
+  width: fit-content;
+  padding-left: 20px;
+}
+.icons a i{
+  display: block;
+color: black;
+ font-size: 1.5rem;
+}
+
+.navs li{
+margin-bottom: 10px;
+display: block;
+padding: 10px;
+
+}
+.navs li a {
+  position: relative;
+}
+
+/* ثبات الشريط التحتي على الرابط الأول */
+.navs li:first-child a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70%; /* ثابت بنسبة 70% */
+  height: 5px;
+  background-color: black;
+  transform: translateY(10px);
+}
+
+/* الحركه على الروابط الثلاثة الأخرى */
+.navs li:not(:first-child) a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* يبدأ من عرض 0 */
+  height: 5px;
+  background-color: black;
+  transform: translateY(10px);
+  transition: width 500ms;
+}
+
+.navs li:not(:first-child):hover a::after {
+  width: 70%; /* يزيد إلى 70% عند التمرير */
+  transform: translateY(10);
+}
+
+.navs li a {
+  display: block;
+
+  color: black;
+  text-wrap: nowrap;
+  
+}
+
+
+/* ____________________________________________  */
+.Page {
+  margin-top: -70px;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.Page .ItemBody {
+position: relative;  
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; /* Ensure overflow is hidden to manage item visibility */
+}
+
+.Page .ItemBody div {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center; /* Center content horizontally */
+}
+
+.Page .ItemBody div div {
+  position: absolute;
+  z-index: 1000;
+  width: 90%; /* Adjusted for padding */
+  height: 30%;
+  bottom: 40px; /* Margin from the bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start; /* Center text horizontally */
+}
+
+/* Style for carousel items */
+.Page .ItemBody .item {
+  opacity: 0; /* Hide items by default */
+  transition: opacity 1s ease-in-out; /* Smooth transition for fade effect */
+}
+
+.Page .ItemBody .item.active {
+  opacity :1; 
+  
+}
+
+
+
+.navs{
+display: flex ;
+flex-direction: column;
+align-items: start;
+}
+
+
+
+.Page .ItemBody div div p {
+  font-family: Rubik, sans-serif;
+  font-size: 1.3rem;
+  color: var(--varColor);
+  line-height: 34px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.Page .ItemBody div div h3 {
+  font-size: 10vmin;
+  color: var(--varColor);
+  text-transform: capitalize;
+}
+.Lists{
+  border: none;
+  background-color: transparent;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  
+  z-index: 100;
+  left: 40%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the indicators */
+  width: auto; /* Auto width for flexible spacing */
+  bottom: 2%;
+}
+
+
+.Page .carousel-indicators > li {
+  background: rgba(255, 255, 255, 1);width: 30.21px;height: 5px;top: 835px;left: 515px;gap: 0px;border-radius: 20px 0px 0px 0px;opacity: 0px;angle: -0 deg;
+margin-left: 20px;
+}
+ 
+.Page .carousel-indicators > li.active {
+ 
+  background-color: black;
+
+}
+
+/* ____________________________________________-*/
+
